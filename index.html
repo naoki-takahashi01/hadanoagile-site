@@ -14,12 +14,12 @@
   <meta property="og:description" content="都心から離れた場所でも、エンジニアが学べる場所に。秦野を拠点に、アジャイルや開発、チームづくりについてゆるく学び合うコミュニティです。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hadanoagile.jp">
-  <meta property="og:image" content="https://hadanoagile.jp/favicon.png">
+  <meta property="og:image" content="https://hadanoagile.jp/hero-hadano.png">
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="秦野アジャイル">
   <meta name="twitter:description" content="都心から離れた場所でも、エンジニアが学べる場所に。">
-  <meta name="twitter:image" content="https://hadanoagile.jp/favicon.png">
+  <meta name="twitter:image" content="https://hadanoagile.jp/hero-hadano.png">
 
   <style>
     :root {
@@ -93,6 +93,10 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       color: var(--text);
+    }
+
+    .logo:hover {
+      text-decoration: none;
     }
 
     .logo-mark {
@@ -190,15 +194,25 @@
       filter: brightness(1.06);
     }
 
-    .button.secondary {
-      background: transparent;
-      color: var(--accent);
-    }
-
     .button.discord {
       border-color: var(--green);
       background: var(--deep-green);
       color: #f5f1e8;
+    }
+
+    .hero-visual {
+      margin-top: 44px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(36, 34, 29, 0.82);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     section {
@@ -223,10 +237,6 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
       margin-top: 28px;
-    }
-
-    .grid.two {
-      grid-template-columns: repeat(2, 1fr);
     }
 
     .card {
@@ -336,8 +346,7 @@
         padding: 64px 0 52px;
       }
 
-      .grid,
-      .grid.two {
+      .grid {
         grid-template-columns: 1fr;
       }
 
@@ -386,14 +395,15 @@
 
         <div class="buttons">
           <a class="button" href="https://hadanoagile.connpass.com/" target="_blank" rel="noopener noreferrer">
-            次回イベントを見る
+            イベントを見る
           </a>
           <a class="button discord" href="https://discord.gg/p5HQBsqVrc" target="_blank" rel="noopener noreferrer">
             Discordに参加する
           </a>
-          <a class="button secondary" href="#records">
-            開催の記録を見る
-          </a>
+        </div>
+
+        <div class="hero-visual">
+          <img src="/hero-hadano.png" alt="秦野アジャイルのキービジュアル。川沿いの風景と山並みを背景に秦野アジャイルの文字が描かれている。">
         </div>
       </div>
     </section>
@@ -453,7 +463,7 @@
         <h2>イベント</h2>
 
         <p class="section-lead">
-          開催情報は connpass で公開しています。参加募集、開催日時、会場、当日の流れは connpass をご確認ください。
+          開催情報は connpass で公開しています。次回イベントがある場合は参加募集を、開催後は過去イベントの記録をご確認いただけます。
           イベントの前後でのやり取りや、ゆるい交流は Discord で行っています。
         </p>
 
