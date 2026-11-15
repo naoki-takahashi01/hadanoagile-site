@@ -69,6 +69,8 @@
       margin: 0 auto;
     }
 
+    /* ヘッダー */
+
     header {
       padding: 18px 0;
       border-bottom: 1px solid var(--line);
@@ -76,6 +78,7 @@
       position: sticky;
       top: 0;
       backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 10;
     }
 
@@ -118,6 +121,14 @@
     nav a {
       color: var(--muted);
     }
+
+    /* スマホ用メニュー（PCでは非表示） */
+
+    .mobile-menu {
+      display: none;
+    }
+
+    /* ヒーロー */
 
     .hero {
       padding: 88px 0 72px;
@@ -209,6 +220,8 @@
       width: 100%;
       height: auto;
     }
+
+    /* 共通セクション */
 
     section {
       padding: 52px 0;
@@ -432,6 +445,8 @@
       background: #171612;
     }
 
+    /* 補足・フッター */
+
     .note {
       margin-top: 28px;
       padding: 20px;
@@ -448,15 +463,85 @@
       font-size: 14px;
     }
 
+    /* スマートフォン */
+
     @media (max-width: 800px) {
-      .header-inner {
-        align-items: flex-start;
-        flex-direction: column;
+      html {
+        scroll-padding-top: 72px;
       }
 
-      nav {
-        justify-content: flex-start;
-        gap: 12px;
+      header {
+        padding: 10px 0;
+      }
+
+      .header-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .desktop-nav {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+        position: relative;
+      }
+
+      .mobile-menu summary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .mobile-menu summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .mobile-menu summary:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      .menu-icon {
+        color: var(--accent);
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .mobile-menu nav {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 12px);
+        width: min(260px, calc(100vw - 32px));
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background: #24221d;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+      }
+
+      .mobile-menu nav a {
+        display: block;
+        padding: 12px;
+        color: var(--text);
+        border-radius: 8px;
+      }
+
+      .mobile-menu nav a:hover,
+      .mobile-menu nav a:focus-visible {
+        background: var(--accent-soft);
+        text-decoration: none;
       }
 
       .hero {
@@ -488,6 +573,14 @@
         padding: 16px;
       }
     }
+
+    /* 動きを減らす設定への対応 */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
   </style>
 </head>
 
@@ -499,7 +592,8 @@
         <span>秦野アジャイル</span>
       </a>
 
-      <nav aria-label="メインナビゲーション">
+      <!-- PC用ナビゲーション -->
+      <nav class="desktop-nav" aria-label="メインナビゲーション">
         <a href="#about">概要</a>
         <a href="#for">参加対象</a>
         <a href="#first-time">初参加の方へ</a>
@@ -507,6 +601,22 @@
         <a href="#community">Discord</a>
         <a href="#records">記録</a>
       </nav>
+
+      <!-- スマホ用ナビゲーション -->
+      <details class="mobile-menu" id="mobile-menu">
+        <summary aria-label="メニューを開閉する">
+          <span class="menu-icon" aria-hidden="true">☰</span>
+        </summary>
+
+        <nav aria-label="スマートフォン用ナビゲーション">
+          <a href="#about">概要</a>
+          <a href="#for">参加対象</a>
+          <a href="#first-time">初参加の方へ</a>
+          <a href="#events">イベント</a>
+          <a href="#community">Discord</a>
+          <a href="#records">記録</a>
+        </nav>
+      </details>
     </div>
   </header>
 
@@ -536,7 +646,11 @@
         </div>
 
         <div class="hero-visual">
-          <img src="/hero-hadano.png" alt="秦野アジャイルのキービジュアル。川沿いの風景と山並みを背景に秦野アジャイルの文字が描かれている。">
+          <img
+            src="/hero-hadano.png"
+            alt="秦野アジャイルのキービジュアル。川沿いの風景と山並みを背景に秦野アジャイルの文字が描かれている。"
+            width="1200"
+            height="675">
         </div>
       </div>
     </section>
@@ -853,5 +967,35 @@
       </p>
     </div>
   </footer>
+
+  <!-- スマホのメニュー操作 -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (!mobileMenu) return;
+
+      // メニュー内のリンクを押したら閉じる
+      mobileMenu.querySelectorAll("nav a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileMenu.open = false;
+        });
+      });
+
+      // メニュー外をタップしたら閉じる
+      document.addEventListener("click", function (event) {
+        if (mobileMenu.open && !mobileMenu.contains(event.target)) {
+          mobileMenu.open = false;
+        }
+      });
+
+      // Escapeキーでも閉じる
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && mobileMenu.open) {
+          mobileMenu.open = false;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
