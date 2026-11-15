@@ -383,6 +383,55 @@
       background: rgba(17, 17, 15, 0.45);
     }
 
+    /* LT登壇資料 */
+
+    .record-slides {
+      margin-top: 14px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(17, 17, 15, 0.45);
+    }
+
+    .record-slides h4 {
+      margin: 0 0 16px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .slide-item {
+      max-width: 760px;
+    }
+
+    .slide-item + .slide-item {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .slide-title {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .slide-speaker {
+      margin: 2px 0 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .speakerdeck-iframe {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      border-radius: 8px;
+      background: #171612;
+    }
+
     .note {
       margin-top: 28px;
       padding: 20px;
@@ -433,6 +482,10 @@
 
       .record-content {
         padding: 0 18px 18px;
+      }
+
+      .record-slides {
+        padding: 16px;
       }
     }
   </style>
@@ -632,22 +685,48 @@
             </summary>
 
             <div class="record-content">
+
+              <!-- 1. 事前案内 -->
               <div class="list">
-                <a href="https://hiliteeternal.hatenablog.com/entry/2026/11/15/003121" target="_blank" rel="noopener noreferrer">
-                  <strong>開催レポート</strong>
-                  <span>少人数だからこそ生まれた対話と、開催を通じて得た学び</span>
+                <a href="https://hiliteeternal.hatenablog.com/entry/2025/10/31" target="_blank" rel="noopener noreferrer">
+                  <strong>事前案内</strong>
+                  <span>LT＋雑談形式での開催についての案内</span>
                 </a>
 
+                <!-- 2. オープニング資料 -->
                 <a href="https://speakerdeck.com/hiliteeternal/hatano-3" target="_blank" rel="noopener noreferrer">
                   <strong>オープニング資料</strong>
                   <span>当日の進め方と、秦野アジャイルで大切にしたいこと</span>
                 </a>
+              </div>
 
-                <a href="https://hiliteeternal.hatenablog.com/entry/2025/10/31" target="_blank" rel="noopener noreferrer">
-                  <strong>事前案内</strong>
-                  <span>LT＋雑談形式と、定員6名の小さな会についての案内</span>
+              <!-- 3. LT資料 -->
+              <div class="record-slides">
+                <h4>LT資料</h4>
+
+                <div class="slide-item">
+                  <p class="slide-title">OSTが盛り上がるとき</p>
+                  <p class="slide-speaker">やまうちさん</p>
+
+                  <iframe
+                    class="speakerdeck-iframe"
+                    src="https://speakerdeck.com/player/89bab91da6d448d39d19dbe7609c48d9"
+                    title="OSTが盛り上がるとき - やまうちさん"
+                    loading="lazy"
+                    allowfullscreen
+                    allow="fullscreen; web-share">
+                  </iframe>
+                </div>
+              </div>
+
+              <!-- 4. 開催レポート -->
+              <div class="list" style="margin-top: 14px;">
+                <a href="https://hiliteeternal.hatenablog.com/entry/2026/11/15/003121" target="_blank" rel="noopener noreferrer">
+                  <strong>開催レポート</strong>
+                  <span>少人数だからこそ生まれた対話と、開催を通じて得た学び</span>
                 </a>
               </div>
+
             </div>
           </details>
 
@@ -666,20 +745,25 @@
 
             <div class="record-content">
               <div class="list">
-                <a href="https://hiliteeternal.hatenablog.com/entry/2026/07/26/200550" target="_blank" rel="noopener noreferrer">
-                  <strong>開催レポート</strong>
-                  <span>少人数の雑談会への適応と、第2回開催の学び</span>
+
+                <!-- 1. 事前案内 -->
+                <a href="https://hiliteeternal.hatenablog.com/entry/2026/07/16/183000" target="_blank" rel="noopener noreferrer">
+                  <strong>事前案内</strong>
+                  <span>LT＋OST形式と、参加人数に応じた開催形式について</span>
                 </a>
 
+                <!-- 2. オープニング資料 -->
                 <a href="https://speakerdeck.com/hiliteeternal/qin-ye-aziyairu-number-2" target="_blank" rel="noopener noreferrer">
                   <strong>オープニング資料</strong>
                   <span>開催に向けて考えたことと、大切にしたいこと</span>
                 </a>
 
-                <a href="https://hiliteeternal.hatenablog.com/entry/2026/07/16/183000" target="_blank" rel="noopener noreferrer">
-                  <strong>事前案内</strong>
-                  <span>LT＋OST形式と、参加人数に応じた開催形式について</span>
+                <!-- 3. 開催レポート -->
+                <a href="https://hiliteeternal.hatenablog.com/entry/2026/07/26/200550" target="_blank" rel="noopener noreferrer">
+                  <strong>開催レポート</strong>
+                  <span>少人数の雑談会への適応と、第2回開催の学び</span>
                 </a>
+
               </div>
             </div>
           </details>
@@ -699,20 +783,25 @@
 
             <div class="record-content">
               <div class="list">
-                <a href="https://hiliteeternal.hatenablog.com/entry/2026/05/03/140943" target="_blank" rel="noopener noreferrer">
-                  <strong>開催レポート</strong>
-                  <span>初回の雑談会で話したこと、感じたことの記録</span>
+
+                <!-- 1. 事前案内 -->
+                <a href="https://note.com/hiliteeternal/n/n8b895983dba8" target="_blank" rel="noopener noreferrer">
+                  <strong>事前案内</strong>
+                  <span>コミュニティを立ち上げた背景と、初回開催について</span>
                 </a>
 
+                <!-- 2. オープニング資料 -->
                 <a href="https://speakerdeck.com/hiliteeternal/qin-ye-aziyairu-number-1" target="_blank" rel="noopener noreferrer">
                   <strong>オープニング資料</strong>
                   <span>秦野でアジャイルをはじめる理由と、初回開催の案内</span>
                 </a>
 
-                <a href="https://note.com/hiliteeternal/n/n8b895983dba8" target="_blank" rel="noopener noreferrer">
-                  <strong>事前案内</strong>
-                  <span>コミュニティを立ち上げた背景と、初回開催について</span>
+                <!-- 3. 開催レポート -->
+                <a href="https://hiliteeternal.hatenablog.com/entry/2026/05/03/140943" target="_blank" rel="noopener noreferrer">
+                  <strong>開催レポート</strong>
+                  <span>初回の雑談会で話したこと、感じたことの記録</span>
                 </a>
+
               </div>
             </div>
           </details>
