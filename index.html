@@ -1,4 +1,4 @@
-```html
+
 <!doctype html>
 <html lang="ja">
 <head>
@@ -41,6 +41,7 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
     body {
@@ -283,6 +284,39 @@
       margin-top: 4px;
     }
 
+    /* 開催回ごとの記録 */
+
+    .record-group {
+      margin-top: 32px;
+    }
+
+    .record-group + .record-group {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+    }
+
+    .record-group h3 {
+      margin: 0 0 8px;
+      font-size: 23px;
+      line-height: 1.4;
+    }
+
+    .record-date {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .record-description {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .record-group .list {
+      margin-top: 16px;
+    }
+
     .note {
       margin-top: 28px;
       padding: 20px;
@@ -469,11 +503,6 @@
         </p>
 
         <div class="list">
-          <a href="https://hadanoagile.connpass.com/event/408037/" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #3</strong>
-            <span>2026年11月14日（土）開催。秦野駅近くのレンタルスペースで、LTと雑談を通じてゆるく学び合いました。</span>
-          </a>
-
           <a href="https://hadanoagile.connpass.com/" target="_blank" rel="noopener noreferrer">
             <strong>秦野アジャイル connpass</strong>
             <span>最新イベント情報・参加申し込み・過去イベントはこちら</span>
@@ -508,51 +537,77 @@
           開催レポートや事前資料など、秦野アジャイルで試したこと、話したこと、そこから得た学びを記録しています。
         </p>
 
-        <div class="list">
-          <a href="https://hiliteeternal.hatenablog.com/entry/2026/11/15/003121" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #3 開催レポート</strong>
-            <span>LTと雑談を組み合わせた第3回。少人数だからこそ生まれた対話と、開催を通じて得た学びの記録</span>
-          </a>
+        <!-- 秦野アジャイル #3 -->
+        <div class="record-group">
+          <h3>秦野アジャイル #3</h3>
+          <span class="record-date">2026年11月14日（土）開催</span>
+          <p class="record-description">
+            秦野駅近くのレンタルスペースで、LTと雑談を組み合わせた会を開催しました。
+          </p>
 
-          <a href="https://speakerdeck.com/hiliteeternal/hatano-3" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #3 オープニング資料</strong>
-            <span>第3回の進め方と、秦野アジャイルで大切にしたいこと</span>
-          </a>
+          <div class="list">
+            <a href="https://hiliteeternal.hatenablog.com/entry/2026/11/15/003121" target="_blank" rel="noopener noreferrer">
+              <strong>開催レポート</strong>
+              <span>少人数だからこそ生まれた対話と、開催を通じて得た学び</span>
+            </a>
 
-          <a href="https://hadanoagile.connpass.com/event/408037/" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #3 イベントページ</strong>
-            <span>2026年11月14日（土）開催。LT＋雑談で、開発やチームづくりについてゆるく学び合う会</span>
-          </a>
+            <a href="https://speakerdeck.com/hiliteeternal/hatano-3" target="_blank" rel="noopener noreferrer">
+              <strong>オープニング資料</strong>
+              <span>当日の進め方と、秦野アジャイルで大切にしたいこと</span>
+            </a>
+          </div>
+        </div>
 
-          <a href="https://hiliteeternal.hatenablog.com/entry/2026/07/26/200550" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #2 開催レポート</strong>
-            <span>LT＋OSTから少人数の雑談会へ適応した、第2回開催の記録</span>
-          </a>
+        <!-- 秦野アジャイル #2 -->
+        <div class="record-group">
+          <h3>秦野アジャイル #2</h3>
+          <span class="record-date">2026年7月26日（日）開催</span>
+          <p class="record-description">
+            参加状況に合わせ、LT＋OSTから少人数の雑談会へ形式を変更して開催しました。
+          </p>
 
-          <a href="https://speakerdeck.com/hiliteeternal/qin-ye-aziyairu-number-2" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #2 オープニング資料</strong>
-            <span>開催に向けて考えたことと、秦野アジャイルで大切にしたいこと</span>
-          </a>
+          <div class="list">
+            <a href="https://hiliteeternal.hatenablog.com/entry/2026/07/26/200550" target="_blank" rel="noopener noreferrer">
+              <strong>開催レポート</strong>
+              <span>少人数の雑談会への適応と、第2回開催の学び</span>
+            </a>
 
-          <a href="https://hiliteeternal.hatenablog.com/entry/2026/07/16/183000" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #2 事前案内</strong>
-            <span>LT＋OST形式と、参加人数に応じた少人数の雑談会についての案内</span>
-          </a>
+            <a href="https://speakerdeck.com/hiliteeternal/qin-ye-aziyairu-number-2" target="_blank" rel="noopener noreferrer">
+              <strong>オープニング資料</strong>
+              <span>開催に向けて考えたことと、大切にしたいこと</span>
+            </a>
 
-          <a href="https://hiliteeternal.hatenablog.com/entry/2026/05/03/140943" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #1 開催レポート</strong>
-            <span>初回の雑談会で話したこと、感じたことの記録</span>
-          </a>
+            <a href="https://hiliteeternal.hatenablog.com/entry/2026/07/16/183000" target="_blank" rel="noopener noreferrer">
+              <strong>事前案内</strong>
+              <span>LT＋OST形式と、参加人数に応じた開催形式について</span>
+            </a>
+          </div>
+        </div>
 
-          <a href="https://speakerdeck.com/hiliteeternal/qin-ye-aziyairu-number-1" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #1 オープニング資料</strong>
-            <span>秦野でアジャイルをはじめる理由と、初回開催の案内</span>
-          </a>
+        <!-- 秦野アジャイル #1 -->
+        <div class="record-group">
+          <h3>秦野アジャイル #1</h3>
+          <span class="record-date">2026年5月開催</span>
+          <p class="record-description">
+            秦野でアジャイルや開発、チームづくりについて話す、最初の雑談会を開催しました。
+          </p>
 
-          <a href="https://note.com/hiliteeternal/n/n8b895983dba8" target="_blank" rel="noopener noreferrer">
-            <strong>秦野アジャイル #1 事前案内</strong>
-            <span>秦野アジャイルを立ち上げた背景と、初回開催についての案内</span>
-          </a>
+          <div class="list">
+            <a href="https://hiliteeternal.hatenablog.com/entry/2026/05/03/140943" target="_blank" rel="noopener noreferrer">
+              <strong>開催レポート</strong>
+              <span>初回の雑談会で話したこと、感じたことの記録</span>
+            </a>
+
+            <a href="https://speakerdeck.com/hiliteeternal/qin-ye-aziyairu-number-1" target="_blank" rel="noopener noreferrer">
+              <strong>オープニング資料</strong>
+              <span>秦野でアジャイルをはじめる理由と、初回開催の案内</span>
+            </a>
+
+            <a href="https://note.com/hiliteeternal/n/n8b895983dba8" target="_blank" rel="noopener noreferrer">
+              <strong>事前案内</strong>
+              <span>コミュニティを立ち上げた背景と、初回開催について</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -602,4 +657,3 @@
   </footer>
 </body>
 </html>
-```
